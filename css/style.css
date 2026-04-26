@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+    cursor: none; /* Hide default cursor to use custom one */
+}
+
+a, button, .btn, .filter-btn, input, textarea {
+    cursor: none !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Custom Cursor Tracker */
+.custom-cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(59, 130, 246, 0.4);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor-follower.hovering {
+    width: 50px;
+    height: 50px;
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.8);
+}
+
+/* Glassmorphism Generic Utility */
+.glass-element {
+    background: rgba(30, 41, 59, 0.3) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--card-bg);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(15, 23, 42, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--accent) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+}
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.hero-title span {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+}
+
+/* Buttons */
+.btn-custom {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+    color: white;
+}
+.btn-outline-custom {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-outline-custom:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+/* Cards with Spotlight Logic */
+.custom-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-card::before {
+    content: '';
+    position: absolute;
+    top: var(--y, -100%);
+    left: var(--x, -100%);
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.custom-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.custom-card:hover::before {
+    opacity: 1;
+}
+
+.custom-card > * {
+    position: relative;
+    z-index: 1; /* Stay above spotlight */
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+/* Timeline */
+.timeline-item {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--accent);
+    border-radius: 50%;
+    left: -9px;
+    top: 5px;
+}
+
+/* Skills */
+.skill-badge {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    display: inline-block;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.skill-badge:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: transparent;
+}
+
+/* Project Filter Transitions */
+.project-item {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.filter-btn.active {
+    background: var(--accent) !important;
+    color: white !important;
+}
