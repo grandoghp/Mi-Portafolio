@@ -1,9 +1,10 @@
 # 🚀 Portafolio Profesional de Simón
 
-Bienvenido a mi portafolio profesional, diseñado y desarrollado como proyecto principal para el **Parcial 2 de Desarrollo Web**. Este sitio web es una aplicación estática altamente interactiva, orientada a demostrar fuertes fundamentos en Frontend, diseño responsivo y el uso de animaciones modernas.
+Bienvenido a mi portafolio profesional, diseñado y desarrollado como proyecto principal para el **Parcial 2 de Desarrollo Web**. Este sitio web es una aplicación estática altamente interactiva, orientada a demostrar fuertes fundamentos en Frontend, diseño responsivo.
 
 ## 💻 Enlace del Proyecto (Deploy)
-> Puedes visualizar el portafolio totalmente en vivo a través de GitHub Pages (si lo has activado en la configuración de la rama):
+
+> Puedes visualizar el portafolio totalmente en vivo a través de GitHub Pages:
 > **[Ver Portafolio en Vivo](https://grandoghp.github.io/Mi-Portafolio/)**
 
 ## 🛠️ Tecnologías Aplicadas
@@ -16,11 +17,13 @@ El proyecto está construido bajo una arquitectura web limpia y escalable:
 - **Bootstrap 5**: Sistema de cuadrículas (Grid system) que hace al sitio 100% responsivo para cualquier dispositivo celular o escritorio.
 
 ### Librerías Externas Agregadas
+
 - **Three.js & Vanta.js**: Implementación de un fondo de red neuronal animado en 3D que reacciona a los movimientos del cursor del usuario.
 - **AOS (Animate On Scroll)**: Ejecuta una aparición suave y transiciones (*Fade-ins*) de tarjetas y elementos conforme el usuario hace scroll hacia abajo.
 - **Typed.js**: Efecto visual de programación automática y borrado en el encabezado principal del sitio.
 
 ## 📂 Arquitectura de Archivos
+
 ```text
 📁 Mi-Portafolio
 ├── 📄 index.html      # Estructura principal de la web y librerías CDN
@@ -31,4 +34,5 @@ El proyecto está construido bajo una arquitectura web limpia y escalable:
 ```
 
 ## 👨‍💻 Acerca del Desarrollador
+
 Soy **Simón**, un apasionado estudiante de último grado de Ingeniería Informática con enfoque en el Desarrollo Web Full Stack y creador de lógicas asombrosas para Videojuegos a través de motores como Unity y herramientas con C# y Luau. ¡Atrévete a contactarme y conoce mis otros repositorios en este perfil de GitHub!
