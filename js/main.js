@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Estudiante de Ingeniería Informática.",
                 "Enfoque en Desarrollo Web Full Stack.",
                 "Creador de Videojuegos y lógica Backend.",
-                "Programador en C#, Luau, JS y Python."
+                "Programador en C#, Luau, Unity, JS y Python."
             ],
             typeSpeed: 40,
             backSpeed: 20,
